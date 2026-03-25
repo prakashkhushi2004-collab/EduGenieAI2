@@ -43,85 +43,191 @@ if "topic" not in st.session_state:
     st.session_state.topic = ""
 
 # ================= TOPICS DATA =================
-
 topics = {
 
 # ================= RECURSION =================
 "recursion": {
-    "explanation": """# 📘 Recursion
-A function calling itself is recursion.
+    "explanation": """
+# 📘 Introduction to Recursion
 
-- Needs base case
-- Uses stack
-- Used in trees, DP
+The process in which a function calls itself directly or indirectly is called *recursion* and the corresponding function is called a *recursive function*.
 
-Example:
-sum(n) = n + sum(n-1)
+• A recursive algorithm takes one step toward the solution and then recursively calls itself to move further.  
+• The algorithm stops once we reach the solution.  
+• Since a function may call itself again and again, this process might continue forever.  
+• So, it is essential to provide a *base case* to terminate recursion.
+
+---
+
+## ⚙️ Steps to Implement Recursion
+
+🔷 *Step 1 – Define a base case*  
+Identify the simplest case for which the solution is known.
+
+🔷 *Step 2 – Define recursive case*  
+Break problem into smaller subproblems and call recursively.
+
+🔷 *Step 3 – Ensure termination*  
+Make sure recursion reaches base case.
+
+🔷 *Step 4 – Combine results*  
+Combine subproblem results.
+
+---
+
+## 🧠 Need of Recursion?
+
+• Improves logical thinking  
+• Solves complex problems  
+• Used in *DP* and *Divide & Conquer*  
+• Examples: Trees, Graphs, Backtracking  
+
+---
+
+## 🎯 Example
+
+sum(n) = n + sum(n-1)  
+Base Case: n == 1
 """,
 
     "questions": [
-        {"id":0,"q":"What is recursion?","opt":{"A":"Function calling itself","B":"Loop","C":"Array","D":"Variable"},"ans":"A"},
-        {"id":1,"q":"Base case means?","opt":{"A":"Start","B":"Stop condition","C":"Loop","D":"None"},"ans":"B"},
-        {"id":2,"q":"No base case leads to?","opt":{"A":"Stop","B":"Infinite recursion","C":"Fast","D":"None"},"ans":"B"},
+        {"id":0,"q":"What is recursion?","opt":{"A":"Function calling itself","B":"Loop only","C":"Conditional statement","D":"Array"},"ans":"A"},
+        {"id":1,"q":"What is base case?","opt":{"A":"Start","B":"Stopping condition","C":"Loop","D":"Variable"},"ans":"B"},
+        {"id":2,"q":"No base case leads to?","opt":{"A":"Stop","B":"Infinite recursion","C":"Fast","D":"No output"},"ans":"B"},
+        {"id":3,"q":"Which data structure is used?","opt":{"A":"Queue","B":"Stack","C":"Heap","D":"Array"},"ans":"B"},
+        {"id":4,"q":"Time complexity of Fibonacci (recursive)?","opt":{"A":"O(n)","B":"O(log n)","C":"O(2^n)","D":"O(n^2)"},"ans":"C"},
+        {"id":5,"q":"What is tail recursion?","opt":{"A":"Loop","B":"Recursive call at end","C":"Multiple calls","D":"None"},"ans":"B"},
+        {"id":6,"q":"Which is NOT suitable for recursion?","opt":{"A":"Tree traversal","B":"Binary search","C":"Simple iteration","D":"Backtracking"},"ans":"C"},
+        {"id":7,"q":"Space complexity depends on?","opt":{"A":"O(1)","B":"O(log n)","C":"Recursion depth","D":"O(n^2)"},"ans":"C"},
+        {"id":8,"q":"Why recursion is expensive?","opt":{"A":"Stack memory","B":"CPU","C":"Array","D":"No reason"},"ans":"A"},
+        {"id":9,"q":"Optimization technique?","opt":{"A":"Loop","B":"Memoization","C":"Sorting","D":"Searching"},"ans":"B"}
     ],
 
-    "plan": ["Basics", "Parameterized", "Arrays", "Subsequences", "Backtracking", "Hard"]
+    "plan": [
+        "Day 1: Basics (Print, Sum, Factorial)",
+        "Day 2: Parameterized & Functional Recursion",
+        "Day 3: Arrays & Strings",
+        "Day 4: Subsequences",
+        "Day 5: Subsets & Combination",
+        "Day 6: Backtracking",
+        "Day 7: Hard Problems (Sudoku, N-Queens)"
+    ]
 },
 
 # ================= DBMS =================
 "dbms": {
-    "explanation": """# 📘 DBMS (Database Management System)
+    "explanation": """
+# 📘 DBMS (Database Management System)
 
-DBMS is software to manage data efficiently.
+DBMS is software used to store, manage, and retrieve data efficiently.
 
-- Organizes data in tables
-- Ensures security & consistency
-- Uses SQL
+---
 
-Types:
-- Relational DB (MySQL)
-- NoSQL (MongoDB)
+## 🧠 Why DBMS?
 
-Key concepts:
-- Normalization
-- ACID properties
-- Transactions
+• Avoids data redundancy  
+• Ensures data consistency  
+• Provides security  
+• Supports multiple users  
+
+---
+
+## 📊 Types of DBMS
+
+• Hierarchical  
+• Network  
+• Relational (RDBMS)  
+• NoSQL  
+
+---
+
+## 🎯 Key Concepts
+
+• Table, Row, Column  
+• Primary Key  
+• Foreign Key  
+• Normalization  
+• Transactions  
+
+---
+
+## ⚡ Example
+
+A student database storing:
+Roll No, Name, Marks
 """,
 
     "questions": [
-        {"id":0,"q":"What is DBMS?","opt":{"A":"Database software","B":"Compiler","C":"OS","D":"IDE"},"ans":"A"},
-        {"id":1,"q":"Which language used in DBMS?","opt":{"A":"C++","B":"SQL","C":"Java","D":"Python"},"ans":"B"},
-        {"id":2,"q":"ACID stands for?","opt":{"A":"Atomicity","B":"Consistency","C":"Isolation","D":"All"},"ans":"D"},
+        {"id":0,"q":"What is DBMS?","opt":{"A":"Software","B":"Hardware","C":"Language","D":"OS"},"ans":"A"},
+        {"id":1,"q":"Primary key is?","opt":{"A":"Unique","B":"Duplicate","C":"Null","D":"Optional"},"ans":"A"},
+        {"id":2,"q":"DBMS avoids?","opt":{"A":"Redundancy","B":"Speed","C":"Storage","D":"CPU"},"ans":"A"},
+        {"id":3,"q":"RDBMS stands for?","opt":{"A":"Relational DBMS","B":"Random DBMS","C":"Real DBMS","D":"None"},"ans":"A"},
+        {"id":4,"q":"Foreign key is used for?","opt":{"A":"Relation","B":"Sorting","C":"Delete","D":"None"},"ans":"A"}
     ],
 
-    "plan": ["Basics", "ER Model", "Normalization", "SQL", "Transactions", "Indexing"]
+    "plan": [
+        "Day 1: Basics of DBMS",
+        "Day 2: ER Model",
+        "Day 3: SQL Queries",
+        "Day 4: Normalization",
+        "Day 5: Transactions",
+        "Day 6: Indexing",
+        "Day 7: Practice Questions"
+    ]
 },
 
 # ================= OOPS =================
 "oops": {
-    "explanation": """# 📘 OOPs (Object Oriented Programming)
+    "explanation": """
+# 📘 OOPs (Object Oriented Programming)
 
-OOP is based on objects & classes.
+OOP is a programming paradigm based on *objects* and *classes*.
 
-4 Pillars:
-- Encapsulation
-- Abstraction
-- Inheritance
-- Polymorphism
+---
 
-Benefits:
-- Code reuse
-- Security
-- Modularity
+## 🧱 4 Pillars of OOP
+
+1. *Encapsulation* : Wrapping data & methods together  
+2. *Abstraction* : Hiding implementation details  
+3. *Inheritance* : Reusing properties of parent class  
+4. *Polymorphism* : Same function, different behavior  
+
+---
+
+## 🚀 Benefits
+
+1. Code Reuse  
+2. Security  
+3. Modularity  
+4. Easy Maintenance  
+
+---
+
+## 🎯 Example
+
+Class : Blueprint  
+Object : Instance  
+
+Example:  
+Car : Class  
+BMW : Object
 """,
 
     "questions": [
-        {"id":0,"q":"OOP stands for?","opt":{"A":"Object Oriented Programming","B":"Only One Program","C":"Operating OS","D":"None"},"ans":"A"},
+        {"id":0,"q":"OOP stands for?","opt":{"A":"Object Oriented Programming","B":"Only One Program","C":"Object Oriented Process","D":"None"},"ans":"A"},
         {"id":1,"q":"Which is NOT OOP principle?","opt":{"A":"Encapsulation","B":"Inheritance","C":"Compilation","D":"Polymorphism"},"ans":"C"},
-        {"id":2,"q":"Inheritance means?","opt":{"A":"Reuse code","B":"Delete code","C":"Compile","D":"None"},"ans":"A"},
+        {"id":2,"q":"Inheritance means?","opt":{"A":"Reuse code","B":"Delete code","C":"Compile","D":"Run"},"ans":"A"}
     ],
 
-    "plan": ["Basics", "Classes", "Inheritance", "Polymorphism", "Abstraction", "Projects"]
+    "plan": [
+        "Day 1: Basics",
+        "Day 2: Classes",
+        "Day 3: Inheritance",
+        "Day 4: Polymorphism",
+        "Day 5: Abstraction",
+        "Day 6: Encapsulation",
+        "Day 7: Projects"
+    ]
 }
 
 }
